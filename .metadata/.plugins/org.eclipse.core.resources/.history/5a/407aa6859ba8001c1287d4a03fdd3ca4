@@ -1,0 +1,299 @@
+package com.qa.archery.entity;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+
+@Entity
+public class Session {
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private long id;
+	
+	@Column
+	private String date;
+	
+	@Column
+	@Min(0)
+	@Max(100)
+	private int distance;
+	
+	@Column
+	private String tagretFace;
+	
+		
+	@Column
+	private String bowType;
+	
+	@Column
+	@Min(0)
+	@Max(24)
+	private int arrows;
+	
+	@Column
+	private int limbsWeight;
+	
+	
+	@Column
+	private String arrow;
+	
+	@Column
+	@Min(0)
+	private int arrowLength;
+	
+	@Column
+	private int ends;
+	
+	@Column
+	private int totalArrows;
+	
+	@Column
+	private int totalScore;
+	
+	
+	//Default constructor
+	public Session() {}
+
+
+	public Session(String date, @Min(0) @Max(100) int distance, String tagretFace, String bowType,
+			@Min(0) @Max(24) int arrows, int limbsWeight, String arrow, @Min(0) int arrowLength, int ends,
+			int totalArrows, int totalScore) {
+		super();
+		this.date = date;
+		this.distance = distance;
+		this.tagretFace = tagretFace;
+		this.bowType = bowType;
+		this.arrows = arrows;
+		this.limbsWeight = limbsWeight;
+		this.arrow = arrow;
+		this.arrowLength = arrowLength;
+		this.ends = ends;
+		this.totalArrows = totalArrows;
+		this.totalScore = totalScore;
+	}
+
+
+	public Session(long id, String date, @Min(0) @Max(100) int distance, String tagretFace, String bowType,
+			@Min(0) @Max(24) int arrows, int limbsWeight, String arrow, @Min(0) int arrowLength, int ends,
+			int totalArrows, int totalScore) {
+		super();
+		this.id = id;
+		this.date = date;
+		this.distance = distance;
+		this.tagretFace = tagretFace;
+		this.bowType = bowType;
+		this.arrows = arrows;
+		this.limbsWeight = limbsWeight;
+		this.arrow = arrow;
+		this.arrowLength = arrowLength;
+		this.ends = ends;
+		this.totalArrows = totalArrows;
+		this.totalScore = totalScore;
+	}
+
+
+	public long getId() {
+		return id;
+	}
+
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
+
+	public String getDate() {
+		return date;
+	}
+
+
+	public void setDate(String date) {
+		this.date = date;
+	}
+
+
+	public int getDistance() {
+		return distance;
+	}
+
+
+	public void setDistance(int distance) {
+		this.distance = distance;
+	}
+
+
+	public String getTagretFace() {
+		return tagretFace;
+	}
+
+
+	public void setTagretFace(String tagretFace) {
+		this.tagretFace = tagretFace;
+	}
+
+
+	public String getBowType() {
+		return bowType;
+	}
+
+
+	public void setBowType(String bowType) {
+		this.bowType = bowType;
+	}
+
+
+	public int getArrows() {
+		return arrows;
+	}
+
+
+	public void setArrows(int arrows) {
+		this.arrows = arrows;
+	}
+
+
+	public int getLimbsWeight() {
+		return limbsWeight;
+	}
+
+
+	public void setLimbsWeight(int limbsWeight) {
+		this.limbsWeight = limbsWeight;
+	}
+
+
+	public String getArrow() {
+		return arrow;
+	}
+
+
+	public void setArrow(String arrow) {
+		this.arrow = arrow;
+	}
+
+
+	public int getArrowLength() {
+		return arrowLength;
+	}
+
+
+	public void setArrowLength(int arrowLength) {
+		this.arrowLength = arrowLength;
+	}
+
+
+	public int getEnds() {
+		return ends;
+	}
+
+
+	public void setEnds(int ends) {
+		this.ends = ends;
+	}
+
+
+	public int getTotalArrows() {
+		return totalArrows;
+	}
+
+
+	public void setTotalArrows(int totalArrows) {
+		this.totalArrows = totalArrows;
+	}
+
+
+	public int getTotalScore() {
+		return totalScore;
+	}
+
+
+	public void setTotalScore(int totalScore) {
+		this.totalScore = totalScore;
+	}
+
+
+	@Override
+	public String toString() {
+		return "Session [id=" + id + ", date=" + date + ", distance=" + distance + ", tagretFace=" + tagretFace
+				+ ", bowType=" + bowType + ", arrows=" + arrows + ", limbsWeight=" + limbsWeight + ", arrow=" + arrow
+				+ ", arrowLength=" + arrowLength + ", ends=" + ends + ", totalArrows=" + totalArrows + ", totalScore="
+				+ totalScore + "]";
+	}
+
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((arrow == null) ? 0 : arrow.hashCode());
+		result = prime * result + arrowLength;
+		result = prime * result + arrows;
+		result = prime * result + ((bowType == null) ? 0 : bowType.hashCode());
+		result = prime * result + ((date == null) ? 0 : date.hashCode());
+		result = prime * result + distance;
+		result = prime * result + ends;
+		result = prime * result + (int) (id ^ (id >>> 32));
+		result = prime * result + limbsWeight;
+		result = prime * result + ((tagretFace == null) ? 0 : tagretFace.hashCode());
+		result = prime * result + totalArrows;
+		result = prime * result + totalScore;
+		return result;
+	}
+
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Session other = (Session) obj;
+		if (arrow == null) {
+			if (other.arrow != null)
+				return false;
+		} else if (!arrow.equals(other.arrow))
+			return false;
+		if (arrowLength != other.arrowLength)
+			return false;
+		if (arrows != other.arrows)
+			return false;
+		if (bowType == null) {
+			if (other.bowType != null)
+				return false;
+		} else if (!bowType.equals(other.bowType))
+			return false;
+		if (date == null) {
+			if (other.date != null)
+				return false;
+		} else if (!date.equals(other.date))
+			return false;
+		if (distance != other.distance)
+			return false;
+		if (ends != other.ends)
+			return false;
+		if (id != other.id)
+			return false;
+		if (limbsWeight != other.limbsWeight)
+			return false;
+		if (tagretFace == null) {
+			if (other.tagretFace != null)
+				return false;
+		} else if (!tagretFace.equals(other.tagretFace))
+			return false;
+		if (totalArrows != other.totalArrows)
+			return false;
+		if (totalScore != other.totalScore)
+			return false;
+		return true;
+	}
+	
+	
+
+}
