@@ -1,4 +1,4 @@
-Dev branch added :)
+Enitity branch added
 # Archery Scoring idea:
 
 ## Contents

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;SpringArchery/src/main/resources/application-pro.properties&apos; to &apos;application-prod.properties&apos;" description="Rename resource &apos;application-pro.properties&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/main/resources/application-pro.properties" name="application-prod.properties" stamp="1647616232234" updateReferences="true"/>
+</session>
